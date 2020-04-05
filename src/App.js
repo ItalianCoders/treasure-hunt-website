@@ -76,7 +76,7 @@ export default function App() {
           </article>
           <article>
             <Title size="32px" height="72px" weight="800" color="#000">
-              italianCoders VS Covid-19!
+              italianCoders VS Covid-19
             </Title>
             <P weight="500" style={{ marginTop: "15px", marginBottom: "32px" }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -89,7 +89,7 @@ export default function App() {
               <span aria-label="download" role="img">
                 🔽
               </span>{" "}
-              scarica il pdf
+              vedi il pdf
             </Button>
           </article>
           <article>
