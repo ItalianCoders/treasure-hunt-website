@@ -35,10 +35,12 @@ export default function DonationBox() {
 
 const Box = styled.section`
   position: sticky;
+  top: 25vh;
   background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
   padding: 32px 24px;
+  margin-bottom: -40px;
 
   color: #212121;
   width: 386px;

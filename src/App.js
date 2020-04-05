@@ -7,6 +7,9 @@ import SmallContainer from "./components/atoms/SmallContainer";
 import { Title, P } from "./components/atoms/Typography";
 import DonationBox from "./components/organisms/DonationBox";
 
+import donation from "./assets/donation.png";
+import Button from "./components/atoms/Button";
+
 export default function App() {
   return (
     <>
@@ -30,9 +33,105 @@ export default function App() {
           <DonationBox />
         </SContainer>
       </Header>
+      <ContentContainer>
+        <AsideAnchors>
+          <ul>
+            <li>Come Funziona?</li>
+            <li>Effettua una donazione</li>
+            <li>italianCoders vs covid-19</li>
+          </ul>
+        </AsideAnchors>
+
+        <ContentSection>
+          <article>
+            <Title size="32px" height="72px" weight="800" color="#000">
+              Come funziona?
+            </Title>
+            <P weight="500" style={{ marginBottom: "32px" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Convallis aenean et tortor at. Eget est lorem ipsum dolor sit amet
+              consectetur. Morbi blandit cursus risus at ultrices mi. Faucibus
+              nisl tincidunt eget nullam non.
+            </P>
+          </article>
+          <article>
+            <Title size="32px" height="72px" weight="800" color="#000">
+              Effettua una donazione!
+            </Title>
+            <img src={donation} alt="ricercatore al microscopio" />
+            <P weight="500" style={{ marginTop: "15px", marginBottom: "32px" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Convallis aenean et tortor at. Eget est lorem ipsum dolor sit amet
+              consectetur. Morbi blandit cursus risus at ultrices mi. Faucibus
+              nisl tincidunt eget nullam non.
+            </P>
+            <Button>
+              <span aria-label="email" role="img">
+                📨
+              </span>{" "}
+              contattaci
+            </Button>
+          </article>
+          <article>
+            <Title size="32px" height="72px" weight="800" color="#000">
+              italianCoders VS Covid-19!
+            </Title>
+            <P weight="500" style={{ marginTop: "15px", marginBottom: "32px" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Convallis aenean et tortor at. Eget est lorem ipsum dolor sit amet
+              consectetur. Morbi blandit cursus risus at ultrices mi. Faucibus
+              nisl tincidunt eget nullam non.
+            </P>
+            <Button>
+              <span aria-label="download" role="img">
+                🔽
+              </span>{" "}
+              scarica il pdf
+            </Button>
+          </article>
+          <article>
+            <Title size="32px" height="72px" weight="800" color="#000">
+              Le aziende che hanno aderito
+            </Title>
+            <P weight="500" style={{ marginTop: "15px", marginBottom: "32px" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod sic id tempor incididunt ut labore et dolore magna aliqua.
+            </P>
+          </article>
+        </ContentSection>
+      </ContentContainer>
+      <Footer>
+        <p>@italianCoders</p>
+      </Footer>
     </>
   );
 }
+
+const SContainer = styled(Container)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const ContentContainer = styled.main`
+  width: 1172px;
+  margin: auto;
+  display: flex;
+  padding: 56px 0 120px 0;
+`;
+
+const ContentSection = styled.section`
+  margin-left: 60px;
+  max-width: 520px;
+  margin-top: -23px;
+
+  article {
+    margin-bottom: 88px;
+  }
+`;
 
 const SSmallContainer = styled(SmallContainer)`
   padding: 64px 0;
@@ -42,8 +141,26 @@ const SSmallContainer = styled(SmallContainer)`
   }
 `;
 
-const SContainer = styled(Container)`
+const AsideAnchors = styled.aside`
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-size: 14px;
+  width: 125px;
+  font-weight: 600;
+
+  li {
+    margin-bottom: 24px;
+  }
+`;
+
+const Footer = styled.footer`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  background: #174a78;
+  height: 48px;
+  color: #fff;
+
+  font-size: 16px;
+  font-weight: 200;
 `;

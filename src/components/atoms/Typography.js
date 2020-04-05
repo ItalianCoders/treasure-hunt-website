@@ -5,7 +5,7 @@ export const Title = styled.h1`
   font-style: ${(props) => props.fstyle || "normal"};
   font-weight: ${(props) => props.weight || "600"};
   font-size: ${(props) => props.size || "56px"};
-  line-height: ${(props) => props.height || "76px"}
+  line-height: ${(props) => props.height || "76px"};
   color: ${(props) => props.color || "#fff"};
 `;
 
