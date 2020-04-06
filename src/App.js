@@ -99,9 +99,14 @@ export default function App() {
               consectetur. Morbi blandit cursus risus at ultrices mi. Faucibus
               nisl tincidunt eget nullam non.
             </P>
-            <Button>
+            <Button
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://drive.google.com/file/d/1wixlJhLcvxzUPTzEAUiuRGF55yuXvjAc/view?usp=sharing"
+            >
               <span aria-label="download" role="img">
-                🔽
+                👀
               </span>{" "}
               vedi il pdf
             </Button>
