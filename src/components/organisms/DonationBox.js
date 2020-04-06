@@ -89,7 +89,7 @@ export default function DonationBox() {
 
 const Credits = styled.div`
   display: flex;
-  font-size: 14px;
+  font-size: 12px;
   justify-content: flex-end;
   margin-top: 40px;
 
@@ -98,7 +98,7 @@ const Credits = styled.div`
     align-items: center;
 
     img {
-      width: 28px;
+      width: 20px;
       border-radius: 5px;
       margin-left: 5px;
     }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 
 import Container from "./components/atoms/Container";
@@ -10,7 +10,14 @@ import DonationBox from "./components/organisms/DonationBox";
 import donation from "./assets/donation.png";
 import Button from "./components/atoms/Button";
 
+const scrollToRef = (ref) =>
+  window.scrollTo({ top: ref.current.offsetTop, behavior: "smooth" });
+
 export default function App() {
+  const workingsRef = useRef(null);
+  const donationRef = useRef(null);
+  const initiativeRef = useRef(null);
+
   return (
     <>
       <Header>
@@ -36,14 +43,18 @@ export default function App() {
       <ContentContainer>
         <AsideAnchors>
           <ul>
-            <li>Come Funziona?</li>
-            <li>Effettua una donazione</li>
-            <li>italianCoders vs covid-19</li>
+            <li onClick={() => scrollToRef(workingsRef)}>Come Funziona?</li>
+            <li onClick={() => scrollToRef(donationRef)}>
+              Effettua una donazione
+            </li>
+            <li onClick={() => scrollToRef(initiativeRef)}>
+              italianCoders vs covid-19
+            </li>
           </ul>
         </AsideAnchors>
 
         <ContentSection>
-          <article>
+          <article ref={workingsRef}>
             <Title size="32px" weight="800" color="#000">
               Come funziona?
             </Title>
@@ -55,7 +66,7 @@ export default function App() {
               nisl tincidunt eget nullam non.
             </P>
           </article>
-          <article>
+          <article ref={donationRef}>
             <Title size="32px" weight="800" color="#000">
               Effettua una donazione!
             </Title>
@@ -77,7 +88,7 @@ export default function App() {
               contattaci
             </Button>
           </article>
-          <article>
+          <article ref={initiativeRef}>
             <Title size="32px" weight="800" color="#000">
               italianCoders VS Covid-19
             </Title>
@@ -154,9 +165,13 @@ const AsideAnchors = styled.aside`
   font-size: 14px;
   width: 125px;
   font-weight: 600;
+  position: sticky;
+  height: 160px;
+  top: 30px;
 
   li {
     margin-bottom: 24px;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 1235px) {
