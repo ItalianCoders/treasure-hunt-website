@@ -23,28 +23,6 @@ export default function DonationBox() {
         </p>
       </header>
       <ShareBox>
-        <Credits>
-          <span>
-            Design
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.trapstudio.it/"
-            >
-              <img alt="trapstudio logo" src={trap} />
-            </a>
-          </span>
-          <span>
-            Code
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://giacomocerquone.com/"
-            >
-              <img alt="giacomocerquone logo" src={gc} />
-            </a>
-          </span>
-        </Credits>
         <p>Condividi l’iniziativa con i tuoi amici!</p>
 
         {/* TODO put social share links */}
@@ -54,7 +32,7 @@ export default function DonationBox() {
               style={{ height: 30, width: 30 }}
               target="_blank"
               rel="noopener noreferrer"
-              url="https://twitter.com/intent/tweet?text=Scopri%20la%20caccia%20al%20tesoro%20a%20scopo%20beneficiario%20di%20italianCoders%20https://italiancoders.it/hunt"
+              url="https://twitter.com/intent/tweet?text=Scopri%20la%20caccia%20al%20tesoro%20firmata%20italianCoders%20a%20scopo%di%20beneficenza%20https://italiancoders.it/hunt"
             />
           </li>
           <li>
@@ -82,6 +60,28 @@ export default function DonationBox() {
             />
           </li>
         </ul>
+        <Credits>
+          <span>
+            Design
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.trapstudio.it/"
+            >
+              <img alt="trapstudio logo" src={trap} />
+            </a>
+          </span>
+          <span>
+            Code
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://giacomocerquone.com/"
+            >
+              <img alt="giacomocerquone logo" src={gc} />
+            </a>
+          </span>
+        </Credits>
       </ShareBox>
     </Box>
   );
@@ -90,6 +90,8 @@ export default function DonationBox() {
 const Credits = styled.div`
   display: flex;
   font-size: 14px;
+  justify-content: flex-end;
+  margin-top: 40px;
 
   span {
     display: flex;
@@ -110,7 +112,7 @@ const Box = styled.section`
   background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
-  padding: 32px 24px;
+  padding: 32px 24px 0 24px;
 
   color: #212121;
   width: 386px;
@@ -121,7 +123,7 @@ const Box = styled.section`
 
   @media screen and (max-width: 1235px) {
     position: static;
-    margin: -20px auto;
+    margin: -20px auto 0 auto;
     width: 70%;
   }
 
