@@ -30,9 +30,9 @@ export default function App() {
               allowFullScreen
             ></iframe>
           </SSmallContainer>
-          <DonationBox />
         </SContainer>
       </Header>
+      <DonationBox />
       <ContentContainer>
         <AsideAnchors>
           <ul>
@@ -44,7 +44,7 @@ export default function App() {
 
         <ContentSection>
           <article>
-            <Title size="32px" height="72px" weight="800" color="#000">
+            <Title size="32px" weight="800" color="#000">
               Come funziona?
             </Title>
             <P weight="500" style={{ marginBottom: "32px" }}>
@@ -56,7 +56,7 @@ export default function App() {
             </P>
           </article>
           <article>
-            <Title size="32px" height="72px" weight="800" color="#000">
+            <Title size="32px" weight="800" color="#000">
               Effettua una donazione!
             </Title>
             <img src={donation} alt="ricercatore al microscopio" />
@@ -67,7 +67,10 @@ export default function App() {
               consectetur. Morbi blandit cursus risus at ultrices mi. Faucibus
               nisl tincidunt eget nullam non.
             </P>
-            <Button>
+            <Button
+              as="a"
+              href="mailto:italiancoders@gmail.com?subject=Vorrei%20effettuare%20una%20donazione"
+            >
               <span aria-label="email" role="img">
                 📨
               </span>{" "}
@@ -75,10 +78,10 @@ export default function App() {
             </Button>
           </article>
           <article>
-            <Title size="32px" height="72px" weight="800" color="#000">
+            <Title size="32px" weight="800" color="#000">
               italianCoders VS Covid-19
             </Title>
-            <P weight="500" style={{ marginTop: "15px", marginBottom: "32px" }}>
+            <P weight="500" style={{ marginBottom: "32px" }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Convallis aenean et tortor at. Eget est lorem ipsum dolor sit amet
@@ -93,10 +96,10 @@ export default function App() {
             </Button>
           </article>
           <article>
-            <Title size="32px" height="72px" weight="800" color="#000">
+            <Title size="32px" weight="800" color="#000">
               Le aziende che hanno aderito
             </Title>
-            <P weight="500" style={{ marginTop: "15px", marginBottom: "32px" }}>
+            <P weight="500" style={{ marginBottom: "32px" }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod sic id tempor incididunt ut labore et dolore magna aliqua.
             </P>
@@ -117,10 +120,10 @@ const SContainer = styled(Container)`
 `;
 
 const ContentContainer = styled.main`
-  width: 1172px;
+  max-width: 1172px;
   margin: auto;
   display: flex;
-  padding: 56px 0 120px 0;
+  padding: 56px 5px 120px 5px;
 `;
 
 const ContentSection = styled.section`
@@ -131,13 +134,17 @@ const ContentSection = styled.section`
   article {
     margin-bottom: 88px;
   }
+
+  @media screen and (max-width: 1235px) {
+    margin: auto;
+  }
 `;
 
 const SSmallContainer = styled(SmallContainer)`
   padding: 64px 0;
 
   iframe {
-    margin-top: 48px;
+    padding-top: 48px;
   }
 `;
 
@@ -150,6 +157,10 @@ const AsideAnchors = styled.aside`
 
   li {
     margin-bottom: 24px;
+  }
+
+  @media screen and (max-width: 1235px) {
+    display: none;
   }
 `;
 

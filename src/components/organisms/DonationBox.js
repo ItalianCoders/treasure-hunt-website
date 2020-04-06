@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { SocialIcon } from "react-social-icons";
+
+import trap from "../../assets/logos/trap.png";
+import gc from "../../assets/logos/gc.png";
 
 export default function DonationBox() {
   return (
@@ -19,19 +23,85 @@ export default function DonationBox() {
         </p>
       </header>
       <ShareBox>
+        <Credits>
+          <span>
+            Design
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.trapstudio.it/"
+            >
+              <img alt="trapstudio logo" src={trap} />
+            </a>
+          </span>
+          <span>
+            Code
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://giacomocerquone.com/"
+            >
+              <img alt="giacomocerquone logo" src={gc} />
+            </a>
+          </span>
+        </Credits>
         <p>Condividi l’iniziativa con i tuoi amici!</p>
 
         {/* TODO put social share links */}
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>
+            <SocialIcon
+              style={{ height: 30, width: 30 }}
+              target="_blank"
+              rel="noopener noreferrer"
+              url="https://twitter.com/intent/tweet?text=Scopri%20la%20caccia%20al%20tesoro%20a%20scopo%20beneficiario%20di%20italianCoders%20https://italiancoders.it/hunt"
+            />
+          </li>
+          <li>
+            <SocialIcon
+              style={{ height: 30, width: 30 }}
+              target="_blank"
+              rel="noopener noreferrer"
+              url="https://twitter.com/jaketrent"
+            />
+          </li>
+          <li>
+            <SocialIcon
+              style={{ height: 30, width: 30 }}
+              target="_blank"
+              rel="noopener noreferrer"
+              url="https://twitter.com/jaketrent"
+            />
+          </li>
+          <li>
+            <SocialIcon
+              style={{ height: 30, width: 30 }}
+              target="_blank"
+              rel="noopener noreferrer"
+              url="https://twitter.com/jaketrent"
+            />
+          </li>
         </ul>
       </ShareBox>
     </Box>
   );
 }
+
+const Credits = styled.div`
+  display: flex;
+  font-size: 14px;
+
+  span {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 28px;
+      border-radius: 5px;
+      margin-left: 5px;
+    }
+  }
+`;
 
 const Box = styled.section`
   position: fixed;
@@ -48,6 +118,16 @@ const Box = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media screen and (max-width: 1235px) {
+    position: static;
+    margin: -20px auto;
+    width: 70%;
+  }
+
+  @media screen and (max-width: 425px) {
+    width: 95%;
+  }
 `;
 
 const Donators = styled.p`
@@ -61,7 +141,7 @@ const ShareBox = styled.footer`
     display: flex;
 
     li {
-      margin-right: 24px;
+      margin-right: 15px;
     }
     li:last-child {
       margin: 0;

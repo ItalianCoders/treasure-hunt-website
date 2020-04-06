@@ -7,6 +7,10 @@ export const Title = styled.h1`
   font-size: ${(props) => props.size || "56px"};
   line-height: ${(props) => props.height || "76px"};
   color: ${(props) => props.color || "#fff"};
+
+  @media screen and (max-width: 525px) {
+    line-height: 1;
+  }
 `;
 
 export const P = styled.p`
